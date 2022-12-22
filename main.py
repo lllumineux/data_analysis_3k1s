@@ -23,10 +23,7 @@ mpl.rcParams.update(mpl.rcParamsDefault)
 
 """Загрузим данные из .xlxs файла и ознакомимся с данными:"""
 
-data = pd.read_excel('Dataset.xlsx')
-
-plt.hist(data['Уровень удовлетворенности'])
-plt.show()
+data = pd.read_excel('data/dataset.xlsx')
 
 data.head()
 
@@ -54,7 +51,7 @@ data.isnull().sum()
 
 data['Факты'].replace('  ', np.nan, inplace=True)
 
-data= data.dropna(subset=['Факты'])
+data = data.dropna(subset=['Факты'])
 
 """Убедимся, что пропусков не осталось:"""
 
@@ -115,5 +112,4 @@ df.info()
 """
 
 
-df.to_excel('new_df.xlsx')
-files.download('new_df.xlsx')
+df.to_excel('data/dataset_new.xlsx')
