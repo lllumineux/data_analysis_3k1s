@@ -17,16 +17,9 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 import seaborn as sns
-from sklearn import preprocessing
-import scipy as sp
-import re
-import time
-import os
 import matplotlib as mpl
 mpl.rcParams.update(mpl.rcParamsDefault)
 
-from google.colab import files
-uploaded = files.upload()
 
 """Загрузим данные из .xlxs файла и ознакомимся с данными:"""
 
@@ -121,6 +114,6 @@ df.info()
 Скачаем его, чтобы посторить диаграммы общей статистики теперь для данных без накрутки для сравнения с исходными данными
 """
 
-from google.colab import files
+
 df.to_excel('new_df.xlsx')
 files.download('new_df.xlsx')
